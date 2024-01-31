@@ -41,7 +41,7 @@ class Scratch3YourExtension {
                     blockType: BlockType.REPORTER,
 
                     // label to display on the block
-                    text: 'My first block [MY_NUMBER] and [MY_STRING]',
+                    text: 'calculate String  [MY_STRING]',
 
                     // true if this block should end a stack
                     terminal: false,
@@ -69,7 +69,7 @@ class Scratch3YourExtension {
                         },
                         MY_STRING: {
                             // default value before the user sets something
-                            defaultValue: 'hello',
+                            defaultValue: '2+2',
 
                             // type/shape of the parameter - choose from:
                             //     ArgumentType.ANGLE - numeric value with an angle picker
@@ -91,9 +91,9 @@ class Scratch3YourExtension {
      * implementation of the block with the opcode that matches this name
      *  this will be called when the block is used
      */
-    myFirstBlock ({ MY_NUMBER, MY_STRING }) {
+    myFirstBlock ({ MY_STRING }) {
         // example implementation to return a string
-        return MY_STRING + ' : doubled would be ' + (MY_NUMBER * 2);
+        return eval(MY_STRING);
     }
 }
 
